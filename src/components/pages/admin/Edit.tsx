@@ -34,8 +34,9 @@ const Edit = () => {
         event.preventDefault()
 
         const DadosEdit = {nome, email, senha}
+        const numId = parseInt(id || '', 10);
 
-        handleEdit(DadosEdit, id)
+        handleEdit(DadosEdit, numId)
         toast.info(`${t('MsgEdit1')}`)
         navigate('/')
     }
@@ -46,7 +47,7 @@ const Edit = () => {
         
         <form onSubmit={handleEditEnv}>
             <div>
-                <label>{t('nome')}</label>
+                <label>{t('nome')}</label> 
                 <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
             </div>
             <div>
